@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% block title %} contact page {% endblock title %}
+{%block body %} This is contact body
+
+<div class="container" class="mt-3 py-4">
+  <form method="post" action="/contact">
+    {% csrf_token %}
+    <!-- name -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="name"
+        name="name"
+        class="form-control"
+        id="name"
+        aria-describedby="nameHelp"
+      />
+    </div>
+
+    <!-- email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="email"
+        aria-describedby="emailHelp"
+      />
+    </div>
+
+    <!-- phone number -->
+    <div class="mb-3">
+      <label for="phone" class="form-label">phone No</label>
+      <input
+        type="phone"
+        name="phone"
+        class="form-control"
+        id="phone"
+        aria-describedby="nameHelp"
+      />
+    </div>
+
+    <!-- tell me why you are contacting me -->
+    <div class="mb-3">
+      <label for="desc" class="form-label"
+        >tell me why you are contacting me</label
+      >
+      <input
+        name="desc"
+        type="desc"
+        class="form-control"
+        id="desc"
+        aria-describedby="descHelp"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock body %}
